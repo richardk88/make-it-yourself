@@ -11,9 +11,11 @@ const stepSchema = mongoose.Schema({
 
 const projectSchema = mongoose.Schema({
     name: String,
+    materials: [String],
     description: String,
     category: String,
-    author: String,
+    views: Number,
+    image: String,
     createdAt: Date,
     updatedAt: Date,
     steps: [stepSchema]
