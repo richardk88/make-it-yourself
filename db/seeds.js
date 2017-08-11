@@ -128,9 +128,9 @@ edUser.save((err) => {
     console.log('Edward was created');
 })
 
-carmineUser.save((err) => {
+selinaUser.save((err) => {
     if (err) console.log(err);
-    console.log('Carmine was created');
+    console.log('Selina was created');
 })
 
 mongoose.connection.close();
