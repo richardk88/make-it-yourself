@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Home from './components/Home';
 import Dashboard from './components/Dashboard';
-import User from './components/User';
-import Project from './components/Project';
-import Step from './components/Step';
 
 class App extends Component {
   render() {
@@ -11,14 +9,11 @@ class App extends Component {
       <Router>
         <div>
           <div>
-            <Link to="/">Dashboard</Link>
-            
+            <Link to="/">Home</Link>
           </div>
           <div>
-            <Route exact path="/" component={Dashboard} />
-            <User />
-            <Project />
-            <Step />  
+            <Route exact path="/" component={Home} /> 
+            <Route path="/user/:userId" component={Dashboard} />
           </div>
         </div>
       </Router>  
