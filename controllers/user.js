@@ -9,15 +9,8 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/email/:emailId', (req, res) => {
-    const userEmail = req.body.email;
-    User.findOne({"email": userEmail}).then((user) => {
-        res.json(user);
-    })
-})
-
-router.get('/:id', (req, res) => {
-    User.findById(req.params.id).then((user) => {
+router.get('/:userId', (req, res) => {
+    User.findById(req.params.userId).then((user) => {
         res.json(user);
     })
 })

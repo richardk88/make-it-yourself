@@ -14,6 +14,7 @@ class Home extends Component {
         super(); 
         this.state = {
             users: [],
+            redirect: false,
             email: '',
             password: ''
         }
@@ -21,17 +22,29 @@ class Home extends Component {
 
     componentWillMount() {
         axios.get('/api/user').then(res => {
-            console.log(this.state.users);
-        })
+            console.log(res.data);
+            this.setState({users: res.data})
+        });
     }
 
     render() {
         return (
             <Center>
                 <div>
+                    <input type="text" placeholder="E-mail" />
+                    <input type="text" placeholder="Password" />
+                </div>
+                <div>
                     <button>Create Account</button>
                     <button>Login</button>
                 </div>
+                {this.state.users.map((user, i) => (
+                    <div key={i}>
+                        <Link to={`/user/${user._id}`}>
+                            {user.firstName}'s Home
+                        </Link>
+                    </div>
+                ))}
             </Center>
         );
     }
