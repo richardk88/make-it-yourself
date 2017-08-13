@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client/build/'));
 
 var UserController = require('./controllers/user');
-app.use('/api/:userId', UserController);
+app.use('/api/user', UserController);
 
 app.get('/', (req,res) => {
     res.sendFile(__dirname + '/client/build/index.html')
