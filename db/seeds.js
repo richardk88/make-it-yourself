@@ -47,7 +47,8 @@ const edUser = new User ({
     firstName: "Edward",
     lastName: "Nigma",
     userName: "E.Nygma?",
-    email: "e.nigma@me.com",
+    email: "edward.nigma@me.com",
+    password: "riddler",
     projects: [edProject1]
 })
 
@@ -120,6 +121,7 @@ const selinaUser = new User ({
     lastName: "Kyle",
     userName: "Catbird",
     email: "selina.kyle@me.com",
+    password: "catwoman",
     projects: [selinaProject1, selinaProject2]
 })
 

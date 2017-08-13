@@ -16,7 +16,6 @@ class App extends Component {
           </div>
           <div>
             <Route exact path="/" component={Dashboard} />
-            <Route path="/:userId" component={Dashboard} />
             <User />
             <Project />
             <Step />  

@@ -26,6 +26,7 @@ const userSchema = mongoose.Schema({
     lastName: String,
     userName: String,
     email: String,
+    password: String,
     createdAt: Date,
     updatedAt: Date,
     projects: [projectSchema]
