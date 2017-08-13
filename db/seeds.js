@@ -49,6 +49,7 @@ const edUser = new User ({
     userName: "E.Nygma?",
     email: "edward.nigma@me.com",
     password: "riddler",
+    blurb: "Yes, it is I, Edward Nigma. My genius has allowed me to create a dazzling selection of challenges and easy-to-make projects. Can you complete them all? Are you ready to give up yet? Your puny mind is no match for my own.",
     projects: [edProject1]
 })
 
@@ -122,6 +123,7 @@ const selinaUser = new User ({
     userName: "Catbird",
     email: "selina.kyle@me.com",
     password: "catwoman",
+    blurb: "Hi, Selina Kyle here! Thanks for stopping by. Your goal is simple! You must complete at least one of my projects and, well, you'll see. Ready for your first one?... What's the matter, Cat got your tongue?",
     projects: [selinaProject1, selinaProject2]
 })
 

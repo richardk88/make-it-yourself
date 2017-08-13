@@ -29,6 +29,7 @@ const userSchema = mongoose.Schema({
     password: String,
     createdAt: Date,
     updatedAt: Date,
+    blurb: String,
     projects: [projectSchema]
 })
 

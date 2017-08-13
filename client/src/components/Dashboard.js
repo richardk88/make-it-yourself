@@ -8,6 +8,7 @@ class Dashboard extends Component {
         super();
         this.state = {
             user: "",
+            blurb: "",
             projects: []
         }
     }
@@ -15,8 +16,6 @@ class Dashboard extends Component {
     componentWillMount() {
         const id = this.props.match.params.userId;
         axios.get(`/api/user/${id}`).then((res) => {
-            console.log(res.data.projects)
-            console.log(res.data)
             this.setState({
                 user: res.data,
                 projects: res.data.projects
@@ -28,11 +27,12 @@ class Dashboard extends Component {
         return (
             <div>
                 <h1>{this.state.user.firstName}'s Dashboard</h1>
+                <h3>{this.state.user.blurb}</h3>
                 {this.state.projects.map((project, i) => {
                     return (
                         <div key={i}>
-                        <img src={project.image} />
-                    </div>
+                            <img src={project.image} />
+                        </div>
                     )
                 })}
             </div>
