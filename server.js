@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 var UserController = require('./controllers/user');
+var ProjectController = require('./controllers/project');
 var StepController = require('./controllers/step');
 
 const app = express();
@@ -25,6 +26,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client/build/'));
 
 app.use('/api/user', UserController);
+app.use('/api/user/:userId/project', ProjectController);
 app.use('/api/user/:userId/project/:projectId/steps', StepController);
 
 app.get('/', (req,res) => {

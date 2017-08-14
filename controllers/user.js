@@ -15,13 +15,4 @@ router.get('/:userId', (req, res) => {
     })
 })
 
-router.get('/:userId/project/:projectId', (req, res) => {
-    User.findById(req.params.userId).then((user) => {
-        const foundProject = user.projects.find((project) => {
-            return project.id === req.params.projectId
-        })
-        res.json(foundProject);
-    })
-})
-
 module.exports = router;

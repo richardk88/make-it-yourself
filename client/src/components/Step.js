@@ -17,7 +17,6 @@ class Step extends Component {
         const projectId = this.props.match.params.projectId;
         const stepId = this.props.match.params.stepId;
         axios.get(`/api/user/${userId}/project/${projectId}/steps/${stepId}`).then((res) => {
-            console.log(res.data)
             this.setState({
                 steps: res.data
             })
