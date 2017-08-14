@@ -8,7 +8,7 @@ class Step extends Component {
         super();
         this.state = {
             user: "",
-            steps: ""
+            steps: []
         }
     }
 
@@ -33,6 +33,7 @@ class Step extends Component {
                     </div>
                     <div>
                         <img src={this.state.steps.image} alt="" />
+                        <p>{this.state.steps.description}</p>
                     </div>
                 </div> 
                 <button>Edit</button>
