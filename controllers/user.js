@@ -15,4 +15,25 @@ router.get('/:userId', (req, res) => {
     })
 })
 
+router.post("/signUp", (req, res) => {
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const userName = req.body.userName;
+    const email = req.body.email;
+    const password = req.body.password;
+    const blurb = req.body.blurb;
+
+    const newUser = new User();
+    newUser.firstName = firstName;
+    newUser.lastName = lastName;
+    newUser.userName = userName;
+    newUser.email = email;
+    newUser.password = password;
+    newUser.blurb = blurb;
+    
+    newUser.save().then((user) => {
+      res.json(user);
+    }).catch(err => console.log(err));
+  })
+
 module.exports = router;

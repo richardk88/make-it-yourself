@@ -35,7 +35,9 @@ class Home extends Component {
                     <input type="text" placeholder="Password" />
                 </div>
                 <div>
-                    <button>Create Account</button>
+                    <Link to={`/signUp`}>
+                        <button>Create Account</button>
+                    </Link>
                     <button>Login</button>
                 </div>
                 <br />

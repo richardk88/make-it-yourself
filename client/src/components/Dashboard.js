@@ -32,16 +32,20 @@ class Dashboard extends Component {
         return (
             <Center>
                 <h1>{this.state.user.firstName}'s Dashboard</h1>
+                <button>Edit</button>
+                <button>DELETE</button>
                 <h4>{this.state.user.blurb}</h4>
-                {this.state.projects.map((project, i) => {
-                    return (
-                        <div key={i}>
-                            <Link to={`/user/${this.state.user._id}/project/${project._id}`}>
-                                <img src={project.image} alt=""/>
-                            </Link>    
-                        </div>
-                    )
-                })}
+                <div>
+                    {this.state.projects.map((project, i) => {
+                        return (
+                            <div key={i}>
+                                <Link to={`/user/${this.state.user._id}/project/${project._id}`}>
+                                    <img src={project.image} alt=""/>
+                                </Link>    
+                            </div>
+                        )
+                    })}
+                </div>
                 <br />
                 <button>New Project</button>
             </Center>
