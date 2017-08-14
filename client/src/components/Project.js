@@ -24,7 +24,6 @@ class Project extends Component {
         const userId = this.props.match.params.userId;
         const projectId = this.props.match.params.projectId;
         axios.get(`/api/user/${userId}/project/${projectId}`).then((res) => {
-            console.log(res.data)
             this.setState({
                 userId: userId,
                 project: res.data,
@@ -39,6 +38,9 @@ class Project extends Component {
             <div>
                 <Center>
                     <h1>{this.state.project.name}</h1>
+                    <Link to={`/user/${this.props.match.params.userId}/`}>
+                        <button>Dashboard</button>
+                    </Link>
                     <button>Edit</button>
                 </Center>
                 <br />

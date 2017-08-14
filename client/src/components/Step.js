@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import Dashboard from './Dashboard'
 
 class Step extends Component {
     constructor(){
@@ -28,6 +29,9 @@ class Step extends Component {
             <div>
                 <div>
                     <div>
+                        <Link to={`/user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}`}>
+                            <button>Go Back</button>
+                        </Link>
                         <h1>{this.state.steps.name}</h1>
                     </div>
                     <div>
