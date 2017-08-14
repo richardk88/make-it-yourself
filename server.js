@@ -2,6 +2,8 @@ require("dotenv").config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+var UserController = require('./controllers/user');
+
 const app = express();
 
 mongoose.Promise = global.Promise;
@@ -21,11 +23,10 @@ connection.on('error', (err) => {
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client/build/'));
 
-var UserController = require('./controllers/user');
 app.use('/api/user', UserController);
 
-var ProjectController = require('./controllers/project');
-app.use('/api/user/:userId/project', ProjectController);
+// var ProjectController = require('./controllers/project');
+// app.use('/api/user/:userId/:projectId', ProjectController);
 
 app.get('/', (req,res) => {
     res.sendFile(__dirname + '/client/build/index.html')

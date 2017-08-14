@@ -2,17 +2,15 @@ const express = require('express');
 const Project = require('../models/project');
 const router = express.Router();
 const mongoose = require('mongoose');
+const User = require('../models/user');
 
-router.get('/', (req, res) => {
-    Project.find().then((projects) => {
-        res.json(projects);
-    });
-});
-
-router.get('/:projectId', (req, res) => {
-    Project.findById(req.params.projectId).then((project) => {
-        res.json(project);
-    })
-})
+// router.get('/', (req, res) => {
+//     User.findById(req.params.userId).then((user) => {
+//         const foundProject = user.projects.find((project) => {
+//             return project.id === req.params.projectId
+//         })
+//         res.json(foundProject);
+//     })
+// })
 
 module.exports = router;

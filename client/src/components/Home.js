@@ -22,7 +22,6 @@ class Home extends Component {
 
     componentWillMount() {
         axios.get('/api/user').then(res => {
-            console.log(res.data);
             this.setState({users: res.data})
         });
     }
@@ -38,10 +37,11 @@ class Home extends Component {
                     <button>Create Account</button>
                     <button>Login</button>
                 </div>
+                <br />
                 {this.state.users.map((user, i) => (
                     <div key={i}>
                         <Link to={`/user/${user._id}`}>
-                            {user.firstName}'s Home
+                            {user.firstName}
                         </Link>
                     </div>
                 ))}

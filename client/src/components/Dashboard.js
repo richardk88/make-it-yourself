@@ -3,6 +3,11 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+const Center = styled.div`
+    text-align: center;
+    margin: auto;
+`
+
 class Dashboard extends Component {
     constructor() {
         super();
@@ -25,17 +30,20 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div>
+            <Center>
                 <h1>{this.state.user.firstName}'s Dashboard</h1>
-                <h3>{this.state.user.blurb}</h3>
+                <h4>{this.state.user.blurb}</h4>
                 {this.state.projects.map((project, i) => {
                     return (
                         <div key={i}>
-                            <img src={project.image} />
+                            <Link to={`/user/${this.state.user._id}/${project._id}`}>
+                                <img src={project.image} />
+                            </Link>    
                         </div>
                     )
                 })}
-            </div>
+                <button>New Project</button>
+            </Center>
         );
     }
 }
