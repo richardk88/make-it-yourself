@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Dashboard from './Dashboard';
 
 const Center = styled.div`
     text-align: center;
@@ -22,7 +21,9 @@ class Home extends Component {
 
     componentWillMount() {
         axios.get('/api/user').then(res => {
-            this.setState({users: res.data})
+            this.setState({
+                users: res.data
+            })
         });
     }
 

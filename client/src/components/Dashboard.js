@@ -36,12 +36,13 @@ class Dashboard extends Component {
                 {this.state.projects.map((project, i) => {
                     return (
                         <div key={i}>
-                            <Link to={`/user/${this.state.user._id}/${project._id}`}>
-                                <img src={project.image} />
+                            <Link to={`/user/${this.state.user._id}/project/${project._id}`}>
+                                <img src={project.image} alt=""/>
                             </Link>    
                         </div>
                     )
                 })}
+                <br />
                 <button>New Project</button>
             </Center>
         );
