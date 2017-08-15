@@ -55,7 +55,7 @@ class Project extends Component {
                         {this.state.steps.map((step, i) => {
                             return(
                                 <li key={i}>
-                                    <Link to={`api/user/${this.state.userId}/project/${this.state.project._id}/steps/${step._id}`}>
+                                    <Link to={`/user/${this.state.userId}/project/${this.state.project._id}/steps/${step._id}`}>
                                         {step.name}
                                     </Link>
                                 </li>
