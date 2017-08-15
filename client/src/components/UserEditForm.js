@@ -35,7 +35,7 @@ class UserEditForm extends Component {
 
     render() {
         if (this.state.redirect){
-            return <Redirect to={`/user/${this.state.user.userId}`} />
+            return <Redirect to={`/user/${this.props.match.params.userId}`} />
         } else {
             return (
                 <div>
@@ -59,7 +59,7 @@ class UserEditForm extends Component {
                             <input type='submit'/>
                     </form>
                     <br />
-                    <Link to={`/user/${this.state.user.userId}`}>Go back</Link>
+                    <Link to={`/user/${this.props.match.params.userId}`}>Go back</Link>
                 </div>
             );
         }

@@ -14,4 +14,15 @@ router.get('/:projectId', (req, res) => {
     })
 })
 
+router.post("/newProject", (req, res) => {
+    const newProject = new Project();
+    newProject.firstName = req.body.name;
+    newProject.lastName = req.body.materials;
+    newProject.ProjectName = req.body.description;
+    
+    newProject.save().then((project) => {
+      res.json(project);
+    }).catch(err => console.log(err));
+  })
+
 module.exports = router;

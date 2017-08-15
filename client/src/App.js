@@ -6,6 +6,7 @@ import Project from './components/Project';
 import Step from './components/Step';
 import UserForm from './components/UserForm';
 import UserEditForm from './components/UserEditForm';
+import NewProjectForm from './components/NewProjectForm';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
             <Route exact path="/user/:userId/" component={Dashboard} />
             <Route exact path="/user/:userId/edit" component={UserEditForm} />
             <Route exact path="/user/:userId/project/:projectId" component={Project} />
+            <Route exact path="/api/user/:userId/project/newProject" component={NewProjectForm} />
             <Route exact path="/user/:userId/project/:projectId/steps/:stepId" component={Step} />
           </div>
         </div>
