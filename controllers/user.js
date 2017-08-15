@@ -3,26 +3,30 @@ const User = require('../models/user');
 const router = express.Router();
 const mongoose = require('mongoose');
 
+//index route
 router.get('/', (req, res) => {
     User.find().then((users) => {
         res.json(users);
     });
 });
 
+//show route (Dashboard)
 router.get('/:userId', (req, res) => {
     User.findById(req.params.userId).then((user) => {
         res.json(user);
     })
 })
 
+//delete route
 router.get('/:userId/delete', (req, res) => {
     const userIdToDelete = req.params.userId;
     User.findByIdAndRemove(userIdToDelete).then((user) => {
         console.log(`${user.userName} was deleted`);
-        // res.redirect('/');
+        res.send(200)
     }).catch(err => console.log(err));
 });
 
+//create route
 router.post("/signUp", (req, res) => {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
@@ -44,8 +48,10 @@ router.post("/signUp", (req, res) => {
     }).catch(err => console.log(err));
   })
 
-  router.put('/:userId', (req,res) => {
-    User.findByIdAndUpdate(req.body._id, req.body).then((user)=>{   
+//edit route
+router.put('/:userId', (req,res) => {
+    User.findByIdAndUpdate(req.body._id, req.body).then((user)=>{ 
+        res.send(200);  
     }).catch(err => console.log(err))
 })
 

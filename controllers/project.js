@@ -5,6 +5,7 @@ const router = express.Router({
 });
 const mongoose = require('mongoose');
 
+//show route
 router.get('/:projectId', (req, res) => {
     User.findById(req.params.userId).then((user) => {
         const foundProject = user.projects.find((project) => {
@@ -14,6 +15,7 @@ router.get('/:projectId', (req, res) => {
     })
 })
 
+//create route
 router.post("/newProject", (req, res) => {
     const newProject = new Project();
     newProject.name = req.body.name;

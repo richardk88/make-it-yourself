@@ -5,6 +5,7 @@ const router = express.Router({
 });
 const mongoose = require('mongoose');
 
+//show route
 router.get('/:stepId', (req, res) => {
     User.findById(req.params.userId).then((user) => {
         const foundProject = user.projects.find((project) => {
