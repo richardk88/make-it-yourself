@@ -5,6 +5,7 @@ import Dashboard from './components/Dashboard';
 import Project from './components/Project';
 import Step from './components/Step';
 import UserForm from './components/UserForm';
+import UserEditForm from './components/UserEditForm';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route exact path="/" component={Home} /> 
             <Route exact path="/signUp/" component={UserForm} />
             <Route exact path="/user/:userId/" component={Dashboard} />
+            <Route exact path="/user/:userId/edit" component={UserEditForm} />
             <Route exact path="/user/:userId/project/:projectId" component={Project} />
             <Route exact path="/user/:userId/project/:projectId/steps/:stepId" component={Step} />
           </div>

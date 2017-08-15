@@ -39,7 +39,7 @@ class Project extends Component {
                 <Center>
                     <h1>{this.state.project.name}</h1>
                     <Link to={`/user/${this.props.match.params.userId}/`}>
-                        <button>Dashboard</button>
+                        <button>Go Back</button>
                     </Link>
                     <button>Edit</button>
                 </Center>

@@ -40,30 +40,30 @@ class UserForm extends Component {
             return <Redirect to={`/user/${this.state.userId}`} />
         } else {
             return (
-            <div>
-                <h1>Create A New User</h1>
-                 <form onSubmit={this._addNewUser}>
-                    <div>
-                        <input name="userName" type="text" placeholder="Username" onChange={this._changeEvent} required/>
-                    </div>
-                    <div>
-                        <input name="firstName" type="text"  placeholder="First Name" onChange={this._changeEvent} required/>
-                    </div>
-                    <div>       
-                        <input name="lastName" type="text" placeholder="Last Name" onChange={this._changeEvent} required/>
-                    </div>
-                    <div>
-                        <input name="email" type="text" placeholder="E-mail" onChange={this._changeEvent} required/>
-                    </div>
-                    <div>
-                        <input name="password" type="text" placeholder="Password" onChange={this._changeEvent} required/>
-                    </div>
-                    <div>
-                        <input name="blurb" type="text" placeholder="Brief Intro" onChange={this._changeEvent} required/>
-                    </div>
-                        <input type='submit'/>
-                </form>
-            </div>
+                <div>
+                    <h1>Create A New User</h1>
+                    <form onSubmit={this._addNewUser}>
+                        <div>
+                            <input name="userName" type="text" placeholder="User Name" onChange={this._changeEvent} required/>
+                        </div>
+                        <div>
+                            <input name="firstName" type="text"  placeholder="First Name" onChange={this._changeEvent} required/>
+                        </div>
+                        <div>       
+                            <input name="lastName" type="text" placeholder="Last Name" onChange={this._changeEvent} required/>
+                        </div>
+                        <div>
+                            <input name="email" type="text" placeholder="E-mail" onChange={this._changeEvent} required/>
+                        </div>
+                        <div>
+                            <input name="password" type="text" placeholder="Password" onChange={this._changeEvent} required/>
+                        </div>
+                        <div>
+                            <input name="blurb" type="text" placeholder="Brief Intro" onChange={this._changeEvent} />
+                        </div>
+                            <input type='submit'/>
+                    </form>
+                </div>
             );    
         }
     }

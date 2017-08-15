@@ -44,6 +44,16 @@ router.post("/signUp", (req, res) => {
     }).catch(err => console.log(err));
   })
 
-
+  router.put('/:userId', (req,res) => {
+    User.findByIdAndUpdate(req.params.id).then((user)=>{
+        user.userName = req.body.userName;
+        user.firstName = req.body.firstName;
+        user.lastName = req.body.lastName;
+        user.email = req.body.email;
+        user.blurb = req.body.blurb;
+        
+        user.save();      
+    }).catch(err => console.log(err))
+})
 
 module.exports = router;

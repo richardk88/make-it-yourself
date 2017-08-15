@@ -30,10 +30,12 @@ class Home extends Component {
     render() {
         return (
             <Center>
+                <br />
                 <div>
                     <input type="text" placeholder="E-mail" />
                     <input type="text" placeholder="Password" />
                 </div>
+                <br />
                 <div>
                     <Link to={`/signUp`}>
                         <button>Create Account</button>
@@ -44,7 +46,7 @@ class Home extends Component {
                 {this.state.users.map((user, i) => (
                     <div key={i}>
                         <Link to={`/user/${user._id}`}>
-                            {user.firstName}
+                            {user.userName}
                         </Link>
                     </div>
                 ))}
