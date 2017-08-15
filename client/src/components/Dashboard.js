@@ -62,7 +62,7 @@ class Dashboard extends Component {
                     })}
                 </div>
                 <br />
-                <Link to={`/api/user/${this.state.user._id}/project/newProject`}>
+                <Link to={`/user/${this.state.user._id}/newProject`}>
                     <button>New Project</button>
                 </Link>
             </Center>

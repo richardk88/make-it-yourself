@@ -9,6 +9,7 @@ class NewProjectForm extends Component {
             redirect: false,
             userId: "",
             project:{
+                _id: '',
                 name: "",
                 image:"",
                 materials: [],
@@ -27,9 +28,8 @@ class NewProjectForm extends Component {
     
     _addNewProject = e => {
         e.preventDefault();
-        axios.post(`/api/user/${this.props.match.params.userId}/project`, this.state).then(res => {
+        axios.post(`/api/user/${this.props.match.params.userId}/newProject`, this.state.project).then(res => {
             this.setState({
-                project: res.data.projects,
                 redirect: true
             });
         }).catch(err => console.log(err));
@@ -57,6 +57,8 @@ class NewProjectForm extends Component {
                         </div>
                             <input type='submit'/>
                     </form>
+                    <br />
+                    <Link to={`/user/${this.props.match.params.userId}`}>Go back</Link>
                 </div>
             );    
         }

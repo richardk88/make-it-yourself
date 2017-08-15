@@ -23,7 +23,7 @@ class Project extends Component {
     componentWillMount(){
         const userId = this.props.match.params.userId;
         const projectId = this.props.match.params.projectId;
-        axios.get(`/api/user/${userId}/project/${projectId}`).then((res) => {
+        axios.get(`/user/${userId}/project/${projectId}`).then((res) => {
             this.setState({
                 userId: userId,
                 project: res.data,

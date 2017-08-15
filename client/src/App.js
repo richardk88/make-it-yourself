@@ -21,8 +21,8 @@ class App extends Component {
             <Route exact path="/signUp/" component={UserForm} />
             <Route exact path="/user/:userId/" component={Dashboard} />
             <Route exact path="/user/:userId/edit" component={UserEditForm} />
+            <Route exact path="/user/:userId/newProject" component={NewProjectForm} />
             <Route exact path="/user/:userId/project/:projectId" component={Project} />
-            <Route exact path="/api/user/:userId/project/newProject" component={NewProjectForm} />
             <Route exact path="/user/:userId/project/:projectId/steps/:stepId" component={Step} />
           </div>
         </div>

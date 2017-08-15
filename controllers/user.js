@@ -22,11 +22,10 @@ router.get('/:userId/delete', (req, res) => {
     const userIdToDelete = req.params.userId;
     User.findByIdAndRemove(userIdToDelete).then((user) => {
         console.log(`${user.userName} was deleted`);
-        res.send(200)
     }).catch(err => console.log(err));
 });
 
-//create route
+//create route  
 router.post("/signUp", (req, res) => {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
