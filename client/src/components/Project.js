@@ -15,7 +15,8 @@ class Project extends Component {
             user: "",
             project: [],
             steps: [],
-            materials: [],
+            materials: "",
+            image: "",
             userId: ""
         }
     }
@@ -23,7 +24,8 @@ class Project extends Component {
     componentWillMount(){
         const userId = this.props.match.params.userId;
         const projectId = this.props.match.params.projectId;
-        axios.get(`/user/${userId}/project/${projectId}`).then((res) => {
+        axios.get(`/api/user/${userId}/project/${projectId}`).then((res) => {
+            console.log(res.data)
             this.setState({
                 userId: userId,
                 project: res.data,
@@ -47,18 +49,13 @@ class Project extends Component {
                 <img src={this.state.project.image} alt=""/>
                 <div>
                     <div>
-                        <h3>Materials:</h3>
-                        {this.state.materials.map((material,i) => {
-                            return(
-                                <li key={i}>{material}</li>
-                            )
-                        })}
+                        <h3>Materials: {this.state.materials}</h3>
                     </div>
                     <ul>
                         {this.state.steps.map((step, i) => {
                             return(
                                 <li key={i}>
-                                    <Link to={`/user/${this.state.userId}/project/${this.state.project._id}/steps/${step._id}`}>
+                                    <Link to={`api/user/${this.state.userId}/project/${this.state.project._id}/steps/${step._id}`}>
                                         {step.name}
                                     </Link>
                                 </li>

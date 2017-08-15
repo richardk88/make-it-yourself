@@ -36,7 +36,7 @@ const edStep4 = new Step ({
 const edProject1 = new Project({
     name: "LED Magnets",
     description: "Learn how to make inexpensive LED magnets that you can stick to any magnetic surface, making the world a bit more colorful.",
-    materials: ["10mm Diffused LED", "CR2032 3V Lithium Batteries", "Strapping Tape", "1/2\" Dia x 1/8\" Thick NdFeB Disc Magnet, Ni-Cu-Ni plated"],
+    materials: '10mm Diffused LED, CR2032 3V Lithium Batteries, Strapping Tape, 1/2" Dia x 1/8" Thick NdFeB Disc Magnet, Ni-Cu-Ni plated',
     category: "",
     image:"https://cdn.stylepark.com/articles/2010/ent-ecg-and-nhs/v305208_958_480_360-2.jpg",
     views: 0,
@@ -82,7 +82,7 @@ const selinaStep4 = new Step ({
 const selinaProject1 = new Project({
     name: "Custom Lawn Chairs",
     description: "Here are my instructions on how to make cheap and easy-to-build lawn chairs that are great for both outdoor and indoor use. Pieces are 2 X 4 framing lumber unless noted otherwise.",
-    materials: ["(2)Front Legs - 27\" long angled 78 degrees to 26 3/8\"", "Back Legs - 24 1/4\" long, 23 1/2\" on short side 78 degrees on bottom 114 degrees on the top", "Short Back Legs - 11 1/2\" 78 degree parallelogram", "Seat - 25\" long Back - 28\" long", "Seat & Back intersect @ 75 degrees & trim excess", "Slats - 10 pieces @ 22\" long - use 1\"x4\"", "Arm Rests - 2 pieces @ 30\" long - use 1\" x 4\""],
+    materials: '(2)Front Legs - 27" long angled 78 degrees to 26 3/8", Back Legs - 24 1/4" long, 23 1/2" on short side 78 degrees on bottom 114 degrees on the top, Short Back Legs - 11 1/2" 78 degree parallelogram, Seat - 25" long Back - 28" long, Seat & Back intersect @ 75 degrees & trim excess, Slats - 10 pieces @ 22" long - use 1"x4", Arm Rests - 2 pieces @ 30" long - use 1" x 4"',
     category: "",
     image:"https://cdn.instructables.com/FQ9/02FS/J654R6WX/FQ902FSJ654R6WX.MEDIUM.jpg",
     views: 0,
@@ -110,7 +110,7 @@ const selinaStep7 = new Step ({
 const selinaProject2 = new Project({
     name: "Funfetti Mug Cake (5-min)",
     description: "Funfetti is the very embodiment of the sweet, celebratory goodness that we associate with birthday cake. All you need is a Mason jar (or mug), a few well-known cake making ingredients, and a microwave.",
-    materials: ["(3 tbsp) Flour", "(1 tbsp) Butter", "(1/4 tsp) Vanilla Extract", "(2 tbsp) Sugar", "(1/4 tsp) Baking Powder", "Egg Yolk", "Rainbow Sprinkles", "Frosting/ Whip Cream"],
+    materials: '(3 tbsp) Flour, (1 tbsp) Butter, (1/4 tsp) Vanilla Extract, (2 tbsp) Sugar, (1/4 tsp) Baking Powder, "Egg Yolk", "Rainbow Sprinkles", "Frosting/ Whip Cream"]',
     category: "",
     image:"https://cdn.instructables.com/F2N/QN2M/IEKJ3U2O/F2NQN2MIEKJ3U2O.MEDIUM.jpg",
     views: 0,

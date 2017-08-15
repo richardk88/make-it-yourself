@@ -13,13 +13,12 @@ router.get('/project/:projectId', (req, res) => {
             return project.id === req.params.projectId
         })
         res.json(foundProject);
-    })
+    }).catch(err => console.log(err));
 })
 
 //create route
 router.post('/newProject', (req, res) => {
     const newProject = new Project();
-    console.log(req.body)
     newProject.name = req.body.name;
     newProject.image = req.body.image;
     newProject.materials = req.body.materials;
