@@ -18,12 +18,21 @@ class UserEditForm extends Component {
         }
     }
 
+    componentWillMount() {
+        const id = this.props.match.params.userId;
+        axios.get(`/api/user/${id}`).then((res) => {
+            this.setState({
+                user: res.data
+            })
+        })
+    }
+
     _handleEditUpdate = (e) => {
         const attributeName = e.target.name;
         const attributeValue = e.target.value;
-        const updateUser = {...this.state};
-        updateUser [attributeName] = attributeValue;
-        this.setState(updateUser);
+        const updateUser = {...this.state.user};
+        updateUser[attributeName] = attributeValue;
+        this.setState({user: updateUser});
     }
 
     _editUser = (e) => {
@@ -42,19 +51,19 @@ class UserEditForm extends Component {
                     <h1>Edit User Dashboard</h1>
                     <form onSubmit={this._editUser}>
                         <div>
-                            <input name="userName" type="text" value={this.state.user.userName} onChange={this._handleEditChange} placeholder="User Name"/>
+                            <input name="userName" type="text" value={this.state.user.userName} onChange={this._handleEditUpdate} placeholder="User Name"/>
                         </div>
                         <div>
-                            <input name="firstName" type="text" value={this.state.user.firstName}  onChange={this._handleEditChange} placeholder="First Name"/>
+                            <input name="firstName" type="text" value={this.state.user.firstName}  onChange={this._handleEditUpdate} placeholder="First Name"/>
                         </div>
                         <div>       
-                            <input name="lastName" type="text" value={this.state.user.lastName} onChange={this._handleEditChange} placeholder="Last Name"/>
+                            <input name="lastName" type="text" value={this.state.user.lastName} onChange={this._handleEditUpdate} placeholder="Last Name"/>
                         </div>
                         <div>
-                            <input name="email" type="text" value={this.state.user.email} onChange={this._handleEditChange} placeholder="E-mail"/>
+                            <input name="email" type="text" value={this.state.user.email} onChange={this._handleEditUpdate} placeholder="E-mail"/>
                         </div>
                         <div>
-                            <input name="blurb" type="text" value={this.state.user.blurb} onChange={this._handleEditChange} placeholder="Brief Intro"/>
+                            <input name="blurb" type="text" value={this.state.user.blurb} onChange={this._handleEditUpdate} placeholder="Brief Intro"/>
                         </div>
                             <input type='submit'/>
                     </form>
