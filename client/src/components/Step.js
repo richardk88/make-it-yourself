@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Dashboard from './Dashboard'
 
 class Step extends Component {
     constructor(){

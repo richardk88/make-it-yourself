@@ -27,7 +27,7 @@ class NewProjectForm extends Component {
     
     _addNewProject = e => {
         e.preventDefault();
-        axios.post(`/api/user/${this.state.userId}/project`, this.state).then(res => {
+        axios.post(`/api/user/${this.props.match.params.userId}/project`, this.state).then(res => {
             this.setState({
                 project: res.data.projects,
                 redirect: true
@@ -37,7 +37,7 @@ class NewProjectForm extends Component {
 
     render() {
         if (this.state.redirect){
-            return <Redirect to={`/user/${this.state.userId}`} />
+            return <Redirect to={`/user/${this.props.match.params.userId}`} />
         } else {
             return (
                 <div>

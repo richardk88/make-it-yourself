@@ -32,7 +32,6 @@ class Dashboard extends Component {
     }
 
     _deleteUser = () => {
-        const id =this.props.match.params.userId;
         axios.get(`/api/user/${this.state.user._id}/delete`).then((res) => {
             console.log(`User was deleted`);
         })

@@ -8,7 +8,7 @@ class UserEditForm extends Component {
         this.state = {
             redirect: false,
             user: {
-                userId: '',
+                _id: '',
                 userName: '',
                 firstName: '',
                 lastName: '',
@@ -28,8 +28,8 @@ class UserEditForm extends Component {
 
     _editUser = (e) => {
         e.preventDefault();
-        axios.put('/api/user/:userId', this.state).then((res) => {
-            console.log('Sucessfully edited user.')
+        axios.put('/api/user/:userId', this.state.user).then((res) => {
+            console.log('User Edit Worked!')  
         }).catch(err => console.log(err))
     }
 

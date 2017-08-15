@@ -21,7 +21,7 @@ class UserForm extends Component {
         const attributeName = e.target.name;
         const attributeValue = e.target.value;
         const newUser = { ...this.state };
-        newUser [attributeName] = attributeValue;
+        newUser[attributeName] = attributeValue;
         this.setState(newUser);
       };
     
