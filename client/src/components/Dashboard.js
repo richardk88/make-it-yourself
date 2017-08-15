@@ -55,6 +55,7 @@ class Dashboard extends Component {
                         return (
                             <div key={i}>
                                 <Link to={`/user/${this.state.user._id}/project/${project._id}`}>
+                                    hi
                                     <img src={project.image} alt=""/>
                                 </Link>    
                             </div>

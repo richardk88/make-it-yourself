@@ -21,9 +21,9 @@ class NewProjectForm extends Component {
     _changeEvent = e => {
         const attributeName = e.target.name;
         const attributeValue = e.target.value;
-        const newProject= { ...this.state.project };
-        newProject[attributeName] = attributeValue;
-        this.setState({project: newProject});
+        const newState= { ...this.state };
+        newState.project[attributeName] = attributeValue;
+        this.setState(newState);
       };
     
     _addNewProject = e => {

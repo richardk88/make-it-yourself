@@ -18,13 +18,18 @@ router.get('/project/:projectId', (req, res) => {
 
 //create route
 router.post('/newProject', (req, res) => {
-    console.log('hello');
     const newProject = new Project();
+    console.log(req.body)
     newProject.name = req.body.name;
     newProject.image = req.body.image;
     newProject.materials = req.body.materials;
     newProject.description = req.body.description;
     
+    User.findById(req.params.userId).then((user) => {
+        user.projects.push(newProject);
+        user.save();
+    })
+
     newProject.save().then((project) => {
       res.json(project);
     }).catch(err => console.log(err));
