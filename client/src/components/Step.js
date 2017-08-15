@@ -28,7 +28,7 @@ class Step extends Component {
             <div>
                 <div>
                     <div>
-                        <Link to={`/api/user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}`}>
+                        <Link to={`/user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}`}>
                             <button>Go Back</button>
                         </Link>
                         <h1>{this.state.steps.name}</h1>
@@ -37,8 +37,7 @@ class Step extends Component {
                         <img src={this.state.steps.image} alt="" />
                         <p>{this.state.steps.description}</p>
                     </div>
-                </div> 
-                <button>DELETE</button>             
+                </div>             
             </div>
         );
     }

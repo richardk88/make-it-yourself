@@ -48,7 +48,7 @@ class Dashboard extends Component {
                 <Link to={`/user/${this.state.user._id}/edit`}>
                     <button>Edit</button>
                 </Link>
-                <button onClick={this._deleteUser}>DELETE</button>
+                <button onClick={this._deleteUser}>DELETE DASHBOARD</button>
                 <h4>{this.state.user.blurb}</h4>
                 <div>
                     {this.state.projects.map((project, i) => {

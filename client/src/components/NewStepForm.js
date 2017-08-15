@@ -1,24 +1,21 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Link, Redirect} from 'react-router-dom';
+import styled from 'styled-components';
+import { Link, Redirect } from 'react-router-dom';
 
 const Center = styled.div`
     text-align: center;
     margin: auto;
 `
 
-class UserForm extends Component {
-    constructor(){
+class NewStepForm extends Component {
+    constructor () {
         super();
         this.state = {
-            firstName: "",
-            lastName: "",
-            userName: "",
-            email: "",
-            password: "",
-            blurb: "",
-            redirect: false,
-            userId: ""
+            name: '',
+            image: '',
+            description: '',
+            redirect: false
         }
     }
 
@@ -30,15 +27,15 @@ class UserForm extends Component {
         this.setState(newUser);
       };
     
-      _addNewUser = e => {
+    _addNewUser = e => {
         e.preventDefault();
         axios.post("/api/user/signUp", this.state).then(res => {
-          this.setState({
-              userId: res.data._id,
-              redirect: true
+            this.setState({
+                userId: res.data._id,
+                redirect: true
             });
         }).catch(err => console.log(err));
-      };
+    };
 
     render() {
         if (this.state.redirect){
@@ -74,4 +71,4 @@ class UserForm extends Component {
     }
 }
 
-export default UserForm;
+export default NewStepForm;

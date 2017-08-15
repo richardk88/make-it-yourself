@@ -43,7 +43,7 @@ class Project extends Component {
                     <Link to={`/user/${this.props.match.params.userId}/`}>
                         <button>Go Back</button>
                     </Link>
-                    <button>Edit</button>
+                    <button>Edit Project</button>
                 </Center>
                 <br />
                 <img src={this.state.project.image} alt=""/>
@@ -58,13 +58,14 @@ class Project extends Component {
                                     <Link to={`/user/${this.state.userId}/project/${this.state.project._id}/steps/${step._id}`}>
                                         {step.name}
                                     </Link>
+                                    <button>Remove</button> 
                                 </li>
                             )
                         })}
                     </ul>
                 </div>
                 <button>Add Step</button>
-                <button>DELETE</button>
+                <button>DELETE PROJECT</button>
             </div>
         );
     }
