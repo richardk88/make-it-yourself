@@ -15,6 +15,14 @@ router.get('/:userId', (req, res) => {
     })
 })
 
+router.get('/:userId/delete', (req, res) => {
+    const userIdToDelete = req.params.userId;
+    User.findByIdAndRemove(userIdToDelete).then((user) => {
+        console.log(`${user.userName} was deleted`);
+        // res.redirect('/');
+    }).catch(err => console.log(err));
+});
+
 router.post("/signUp", (req, res) => {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
@@ -35,5 +43,7 @@ router.post("/signUp", (req, res) => {
       res.json(user);
     }).catch(err => console.log(err));
   })
+
+
 
 module.exports = router;

@@ -28,10 +28,9 @@ class UserForm extends Component {
       _addNewUser = e => {
         e.preventDefault();
         axios.post("/api/user/signUp", this.state).then(res => {
-            console.log(res.data)
           this.setState({
               userId: res.data._id,
-              "redirect": true
+              redirect: true
             });
         }).catch(err => console.log(err));
       };

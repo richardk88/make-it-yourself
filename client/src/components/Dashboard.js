@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 const Center = styled.div`
     text-align: center;
@@ -12,8 +12,10 @@ class Dashboard extends Component {
     constructor() {
         super();
         this.state = {
-            user: "",
+            user: [],
             blurb: "",
+            userId: "",
+            redirect: false,
             projects: []
         }
     }
@@ -23,17 +25,29 @@ class Dashboard extends Component {
         axios.get(`/api/user/${id}`).then((res) => {
             this.setState({
                 user: res.data,
-                projects: res.data.projects
+                projects: res.data.projects,
+                userId: id
             })
         })
     }
 
+    _deleteUser = () => {
+        const id =this.props.match.params.userId;
+        axios.get(`/api/user/${this.state.user._id}/delete`).then((res) => {
+            console.log(`User was deleted`);
+        })
+        this.setState({redirect: true})
+    }
+
     render() {
+        if(this.state.redirect){
+            return <Redirect to={'/'}/>;
+        } else {
         return (
             <Center>
                 <h1>{this.state.user.firstName}'s Dashboard</h1>
                 <button>Edit</button>
-                <button>DELETE</button>
+                <button onClick={this._deleteUser}>DELETE</button>
                 <h4>{this.state.user.blurb}</h4>
                 <div>
                     {this.state.projects.map((project, i) => {
@@ -49,7 +63,7 @@ class Dashboard extends Component {
                 <br />
                 <button>New Project</button>
             </Center>
-        );
+        );}
     }
 }
 

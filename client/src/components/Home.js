@@ -15,7 +15,7 @@ class Home extends Component {
             users: [],
             redirect: false,
             email: '',
-            password: ''
+            password: '',
         }
     }
 
