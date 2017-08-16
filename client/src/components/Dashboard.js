@@ -23,13 +23,15 @@ const Blurb = styled.p`
 
 const ProjectContainer = styled.div`
     display: flex;
-    flex-direction: column;
-    text-align: ;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
     padding: 10px;
     border: 1px solid rgba(0,0,0,.2);
 `
 const ProjectCImage = styled.img`
-    width: 10%;
+    width: 280px;
+    height: 280px;
 `
 
 class Dashboard extends Component {
@@ -88,7 +90,7 @@ class Dashboard extends Component {
                             </div>
                         )
                     })}
-                </ProjectContainer>
+                </ProjectContainer>   
                 <br />
                 <Link to={`/user/${this.state.user._id}/newProject`}>
                     <button>New Project</button>
