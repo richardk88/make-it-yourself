@@ -3,10 +3,19 @@ import axios from 'axios';
 import styled from 'styled-components';
 import {Link, Redirect} from 'react-router-dom';
 
-const Center = styled.div`
-    text-align: center;
-    margin: auto;
+const Form = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 65px 400px 120px 400px;
+    background-color: white;
+    padding: 70px;
+    border: 1px solid rgba(0,0,0,.2);
 `
+const style = {
+    height: "300px",
+  }
 
 class UserForm extends Component {
     constructor(){
@@ -46,8 +55,9 @@ class UserForm extends Component {
             return <Redirect to={`/user/${this.state.userId}`} />
         } else {
             return (
-                <div>
-                    <h1>Create A New User</h1>
+                <Form>
+                    <img src='http://i.imgur.com/bEt0Age.png' style={style}/>
+                    <h1>Create A New Life-Form</h1>
                     <form onSubmit={this._addNewUser}>
                         <div>
                             <input name="userName" type="text" placeholder="User Name" onChange={this._changeEvent} required/>
@@ -69,7 +79,7 @@ class UserForm extends Component {
                         </div>
                             <input type='submit'/>
                     </form>
-                </div>
+                </Form>
             );    
         }
     }

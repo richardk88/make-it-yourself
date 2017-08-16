@@ -57,7 +57,7 @@ class Project extends Component {
                                     <Link to={`/user/${this.state.userId}/project/${this.state.project._id}/steps/${step._id}`}>
                                         {step.name}
                                     </Link>
-                                    <button>Remove</button> 
+                                    {/* <button>Remove</button>  */}
                                 </li>
                             )
                         })}
