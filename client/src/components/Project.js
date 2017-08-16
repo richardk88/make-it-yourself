@@ -8,11 +8,16 @@ import { Link } from 'react-router-dom';
 //     margin: auto;   
 // `
 const Center = styled.div`
-text-align: center;
-margin: 30px 250px 90px 250px;
-background-color: white;
-padding: 20px 30px 15px 30px;
-border: 1px solid rgba(0,0,0,.2);
+    text-align: center;
+    margin: 30px 250px 90px 250px;
+    background-color: white;
+    padding: 20px 30px 15px 30px;
+    border: 1px solid rgba(0,0,0,.2);
+`
+
+const ProjectImage = styled.img`
+    width: 280px;
+    height: 280px;
 `
 
 class Project extends Component {
@@ -51,7 +56,7 @@ class Project extends Component {
                     {/* <button>Edit Project</button> */}
                 <br />
                 <br />
-                <img src={this.state.project.image} alt=""/>
+                <ProjectImage src={this.state.project.image} alt=""/>
                 <br />
                 <br />
                 <div>

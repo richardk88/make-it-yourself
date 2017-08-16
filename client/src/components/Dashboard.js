@@ -29,7 +29,7 @@ const ProjectContainer = styled.div`
     padding: 10px;
     border: 1px solid rgba(0,0,0,.2);
 `
-const ProjectCImage = styled.img`
+const ProjectImage = styled.img`
     width: 280px;
     height: 280px;
 `
@@ -85,7 +85,7 @@ class Dashboard extends Component {
                         return (
                             <div key={i}>
                                 <Link to={`/user/${this.state.user._id}/project/${project._id}`}>
-                                    <ProjectCImage src={project.image} alt=""/>
+                                    <ProjectImage src={project.image} alt=""/>
                                 </Link>    
                             </div>
                         )
