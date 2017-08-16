@@ -19,7 +19,7 @@ const Nav = styled.div`
   align-items: center;
   padding: 45px 5vw;
   width: 100vw;
-  height: 25px;
+  height: 15px;
   border-bottom: 2px solid rgba(0,0,0,.0975);
   p{
     font-size: 2.55rem;
@@ -39,7 +39,7 @@ width: 100vw;
 height: .5vw;
 text-align: center;
 margin-bottom: 0;
-padding: 30px 5vw;
+padding: 30px 3vw;
 border-top: 2px solid rgba(0,0,0,0);
 p{
   color:rgba(255,255,255,1);

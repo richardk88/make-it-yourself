@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 
 const Center = styled.div`
     text-align: center;
-    margin: 100px 400px 0px 400px;
+    margin: 40px 300px 0px 300px;
     background-color: white;
-    padding: 70px;
+    padding: 50px;
     border: 1px solid rgba(0,0,0,.2);
 `
 

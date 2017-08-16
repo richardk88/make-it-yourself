@@ -8,13 +8,13 @@ const Form = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 65px 400px 120px 400px;
+    margin: 20px 300px 0px 300px;
     background-color: white;
-    padding: 70px;
+    padding: 20px;
     border: 1px solid rgba(0,0,0,.2);
 `
 const style = {
-    height: "300px",
+    height: "280px",
   }
 
 class UserForm extends Component {

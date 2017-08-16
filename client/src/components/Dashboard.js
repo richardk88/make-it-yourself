@@ -5,9 +5,9 @@ import { Link, Redirect } from 'react-router-dom';
 
 const Center = styled.div`
     text-align: center;
-    margin: 45px 400px 120px 400px;
+    margin: 30px 250px 90px 250px;
     background-color: white;
-    padding: 30px 70px 50px 70px;
+    padding: 20px 30px 15px 30px;
     border: 1px solid rgba(0,0,0,.2);
 `
 
@@ -19,6 +19,17 @@ const Blurb = styled.p`
     padding: 10px;
     border: 1px solid rgba(0,0,0,.2);
     border-radius: 6px;
+`
+
+const ProjectContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    text-align: ;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,.2);
+`
+const ProjectCImage = styled.img`
+    width: 10%;
 `
 
 class Dashboard extends Component {
@@ -67,17 +78,17 @@ class Dashboard extends Component {
                 <br />
                 <Blurb>{this.state.user.blurb}</Blurb>
                 <br />
-                <div>
+                <ProjectContainer>
                     {this.state.projects.map((project, i) => {
                         return (
                             <div key={i}>
                                 <Link to={`/user/${this.state.user._id}/project/${project._id}`}>
-                                    <img src={project.image} alt=""/>
+                                    <ProjectCImage src={project.image} alt=""/>
                                 </Link>    
                             </div>
                         )
                     })}
-                </div>
+                </ProjectContainer>
                 <br />
                 <Link to={`/user/${this.state.user._id}/newProject`}>
                     <button>New Project</button>
