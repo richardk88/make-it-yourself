@@ -12,10 +12,12 @@ class NewStepForm extends Component {
     constructor () {
         super();
         this.state = {
-            name: '',
-            image: '',
-            description: '',
-            redirect: false
+            redirect: false,
+            step:{    
+                name: '',
+                image: '',
+                description: '',
+            }
         }
     }
 
@@ -23,13 +25,13 @@ class NewStepForm extends Component {
         const attributeName = e.target.name;
         const attributeValue = e.target.value;
         const newState = { ...this.state };
-        newState[attributeName] = attributeValue;
+        newState.step[attributeName] = attributeValue;
         this.setState(newState);
       };
     
     _addNewStep = e => {
         e.preventDefault();
-        axios.post("/user/:userId/project/:projectId/newStep", this.state).then(res => {
+        axios.post(`/api/user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}/newStep`, this.state.step).then(res => {
             this.setState({
                 redirect: true
             });
@@ -38,12 +40,12 @@ class NewStepForm extends Component {
 
     render() {
         if (this.state.redirect){
-            return <Redirect to={`/user/${this.props.match.params.userId}`} />
+            return <Redirect to={`/user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}`} />
         } else {
             return (
                 <div>
                     <h1>Create A New Step</h1>
-                    <form onSubmit={this._addNewUser}>
+                    <form onSubmit={this._addNewStep}>
                         <div>
                             <input name="name" type="text" placeholder="Name" onChange={this._changeEvent} required/>
                         </div>

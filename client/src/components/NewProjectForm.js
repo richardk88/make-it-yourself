@@ -7,13 +7,13 @@ class NewProjectForm extends Component {
         super();
         this.state = {
             redirect: false,
-            userId: "",
+            userId: '',
             project:{
                 _id: '',
-                name: "",
-                image:"",
+                name: '',
+                image:'',
                 materials: [],
-                description:""
+                description:''
             }
         }
     }
