@@ -38,15 +38,15 @@ bottom: 0px;
 width: 100vw;
 height: .5vw;
 text-align: center;
-margin-top: 90px;
 margin-bottom: 0;
-padding: 40px 5vw;
+padding: 30px 5vw;
 border-top: 2px solid rgba(0,0,0,0);
 p{
   color:rgba(255,255,255,1);
   font-size: 1.7rem;
   margin: 0;
-  svg{ margin-bottom: 5px; }
+  svg{ 
+    margin-bottom: 5px; }
 }
 `
 
