@@ -8,10 +8,7 @@ const Center = styled.div`
     margin: 100px 400px 0px 400px;
     background-color: white;
     padding: 70px;
-`
-
-const LoginDiv = styled.div`
-    
+    border: 1px solid rgba(0,0,0,.2);
 `
 
 const style = {
