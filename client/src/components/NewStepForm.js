@@ -38,7 +38,7 @@ class NewStepForm extends Component {
 
     render() {
         if (this.state.redirect){
-            return <Redirect to={`/user/${this.state.userId}`} />
+            return <Redirect to={`/user/${this.props.match.params.userId}`} />
         } else {
             return (
                 <div>
@@ -55,6 +55,9 @@ class NewStepForm extends Component {
                         </div>
                             <input type='submit'/>
                     </form>
+                    <Link to={`/user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}`}>
+                        Go Back
+                    </Link>
                 </div>
             );    
         }
