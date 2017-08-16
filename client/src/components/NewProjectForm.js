@@ -1,6 +1,22 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import {Link, Redirect} from 'react-router-dom';
+
+const Form = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: 20px 300px 0px 300px;
+background-color: white;
+padding: 20px;
+border: 1px solid rgba(0,0,0,.2);
+`
+
+const style = {
+    height: "280px",
+  }
 
 class NewProjectForm extends Component {
     constructor() {
@@ -40,7 +56,8 @@ class NewProjectForm extends Component {
             return <Redirect to={`/user/${this.props.match.params.userId}`} />
         } else {
             return (
-                <div>
+                <Form>
+                    <img src='http://i.imgur.com/bEt0Age.png' style={style}/>
                     <h1>Create A New Project</h1>
                     <form onSubmit={this._addNewProject}>
                         <div>
@@ -55,11 +72,12 @@ class NewProjectForm extends Component {
                         <div>
                             <input name="description" type="text" placeholder="Project Description" onChange={this._changeEvent} required/>
                         </div>
+                        <br />
                             <input type='submit'/>
                     </form>
                     <br />
                     <Link to={`/user/${this.props.match.params.userId}`}>Go back</Link>
-                </div>
+                </Form>
             );    
         }
     }

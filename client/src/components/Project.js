@@ -3,10 +3,16 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+// const Center = styled.div`
+//     text-align: center;
+//     margin: auto;   
+// `
 const Center = styled.div`
-    text-align: center;
-    margin: auto;
-    
+text-align: center;
+margin: 30px 250px 90px 250px;
+background-color: white;
+padding: 20px 30px 15px 30px;
+border: 1px solid rgba(0,0,0,.2);
 `
 
 class Project extends Component {
@@ -37,29 +43,30 @@ class Project extends Component {
 
     render() {
         return (
-            <div>
-                <Center>
+            <Center>
                     <h1>{this.state.project.name}</h1>
                     <Link to={`/user/${this.props.match.params.userId}/`}>
                         <button>Go Back</button>
                     </Link>
-                    <button>Edit Project</button>
-                </Center>
+                    {/* <button>Edit Project</button> */}
+                <br />
                 <br />
                 <img src={this.state.project.image} alt=""/>
+                <br />
+                <br />
                 <div>
                     <div>
-                        <h3>Materials: {this.state.materials}</h3>
+                        <p>Materials: {this.state.materials}</p>
                     </div>
                     <ul>
                         {this.state.steps.map((step, i) => {
                             return(
-                                <li key={i}>
+                                <div key={i}>
                                     <Link to={`/user/${this.state.userId}/project/${this.state.project._id}/steps/${step._id}`}>
                                         {step.name}
                                     </Link>
                                     {/* <button>Remove</button>  */}
-                                </li>
+                                </div>
                             )
                         })}
                     </ul>
@@ -68,7 +75,7 @@ class Project extends Component {
                     <button>Add Step</button>
                 </Link>
                 <button>DELETE PROJECT</button>
-            </div>
+            </Center>
         );
     }
 }
