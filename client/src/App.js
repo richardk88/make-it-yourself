@@ -7,6 +7,7 @@ import Step from './components/Step';
 import UserForm from './components/UserForm';
 import UserEditForm from './components/UserEditForm';
 import NewProjectForm from './components/NewProjectForm';
+import NewStepForm from './components/NewStepForm';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route exact path="/user/:userId/edit" component={UserEditForm} />
             <Route exact path="/user/:userId/newProject" component={NewProjectForm} />
             <Route exact path="/user/:userId/project/:projectId" component={Project} />
+            <Route exact path="/user/:userId/project/:projectId/newStep" component={NewStepForm} />
             <Route exact path="/user/:userId/project/:projectId/steps/:stepId" component={Step} />
           </div>
         </div>

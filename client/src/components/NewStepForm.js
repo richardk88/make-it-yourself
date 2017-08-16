@@ -22,16 +22,15 @@ class NewStepForm extends Component {
     _changeEvent = e => {
         const attributeName = e.target.name;
         const attributeValue = e.target.value;
-        const newUser = { ...this.state };
-        newUser[attributeName] = attributeValue;
-        this.setState(newUser);
+        const newState = { ...this.state };
+        newState[attributeName] = attributeValue;
+        this.setState(newState);
       };
     
-    _addNewUser = e => {
+    _addNewStep = e => {
         e.preventDefault();
-        axios.post("/api/user/signUp", this.state).then(res => {
+        axios.post("/user/:userId/project/:projectId/newStep", this.state).then(res => {
             this.setState({
-                userId: res.data._id,
                 redirect: true
             });
         }).catch(err => console.log(err));
@@ -43,25 +42,16 @@ class NewStepForm extends Component {
         } else {
             return (
                 <div>
-                    <h1>Create A New User</h1>
+                    <h1>Create A New Step</h1>
                     <form onSubmit={this._addNewUser}>
                         <div>
-                            <input name="userName" type="text" placeholder="User Name" onChange={this._changeEvent} required/>
+                            <input name="name" type="text" placeholder="Name" onChange={this._changeEvent} required/>
                         </div>
                         <div>
-                            <input name="firstName" type="text"  placeholder="First Name" onChange={this._changeEvent} required/>
+                            <input name="image" type="text"  placeholder="Image Link" onChange={this._changeEvent} required/>
                         </div>
                         <div>       
-                            <input name="lastName" type="text" placeholder="Last Name" onChange={this._changeEvent} required/>
-                        </div>
-                        <div>
-                            <input name="email" type="text" placeholder="E-mail" onChange={this._changeEvent} required/>
-                        </div>
-                        <div>
-                            <input name="password" type="text" placeholder="Password" onChange={this._changeEvent} required/>
-                        </div>
-                        <div>
-                            <input name="blurb" type="text" placeholder="Brief Intro" onChange={this._changeEvent} />
+                            <input name="description" type="text" placeholder="Description" onChange={this._changeEvent} required/>
                         </div>
                             <input type='submit'/>
                     </form>

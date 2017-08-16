@@ -27,7 +27,7 @@ app.use(express.static(__dirname + '/client/build/'));
 
 app.use('/api/user', UserController);
 app.use('/api/user/:userId/', ProjectController);
-app.use('/api/user/:userId/project/:projectId/steps', StepController);
+app.use('/api/user/:userId/project/:projectId', StepController);
 
 app.get('/', (req,res) => {
     res.sendFile(__dirname + '/client/build/index.html')

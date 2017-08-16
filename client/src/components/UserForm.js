@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import {Link, Redirect} from 'react-router-dom';
 
 const Center = styled.div`
@@ -25,9 +26,9 @@ class UserForm extends Component {
     _changeEvent = e => {
         const attributeName = e.target.name;
         const attributeValue = e.target.value;
-        const newUser = { ...this.state };
-        newUser[attributeName] = attributeValue;
-        this.setState(newUser);
+        const newState = { ...this.state };
+        newState[attributeName] = attributeValue;
+        this.setState(newState);
       };
     
       _addNewUser = e => {
