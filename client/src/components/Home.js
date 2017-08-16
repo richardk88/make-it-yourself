@@ -5,8 +5,18 @@ import { Link } from 'react-router-dom';
 
 const Center = styled.div`
     text-align: center;
-    margin: auto;
+    margin: 100px 400px 0px 400px;
+    background-color: white;
+    padding: 70px;
 `
+
+const LoginDiv = styled.div`
+    
+`
+
+const style = {
+    height: "300px",
+  }
 
 class Home extends Component {
     constructor() {
@@ -30,7 +40,7 @@ class Home extends Component {
     render() {
         return (
             <Center>
-                <br />
+                <img src='http://i.imgur.com/bEt0Age.png' style={style}/>
                 <div>
                     <input type="text" placeholder="E-mail" />
                     <input type="text" placeholder="Password" />
