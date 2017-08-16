@@ -40,7 +40,7 @@ class NewStepForm extends Component {
     
     _addNewStep = e => {
         e.preventDefault();
-        axios.post(`/api /user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}/newStep`, this.state.step).then(res => {
+        axios.post(`/api/user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}/newStep`, this.state.step).then(res => {
             this.setState({
                 redirect: true
             });
