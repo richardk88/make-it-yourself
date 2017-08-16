@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const Center = styled.div`
     text-align: center;
     margin: auto;
+    
 `
 
 class Project extends Component {

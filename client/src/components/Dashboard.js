@@ -5,7 +5,20 @@ import { Link, Redirect } from 'react-router-dom';
 
 const Center = styled.div`
     text-align: center;
-    margin: auto;
+    margin: 45px 400px 120px 400px;
+    background-color: white;
+    padding: 30px 70px 50px 70px;
+    border: 1px solid rgba(0,0,0,.2);
+`
+
+const Blurb = styled.p`
+    text-align: center;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    background-color: rgba;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
 `
 
 class Dashboard extends Component {
@@ -45,11 +58,15 @@ class Dashboard extends Component {
         return (
             <Center>
                 <h1>{this.state.user.firstName}'s Dashboard</h1>
-                <Link to={`/user/${this.state.user._id}/edit`}>
-                    <button>Edit</button>
-                </Link>
-                <button onClick={this._deleteUser}>DELETE DASHBOARD</button>
-                <h4>{this.state.user.blurb}</h4>
+                <div>
+                    <Link to={`/user/${this.state.user._id}/edit`}>
+                        <button>Edit</button>
+                    </Link>
+                    <button onClick={this._deleteUser}>DELETE DASHBOARD</button>
+                </div>
+                <br />
+                <Blurb>{this.state.user.blurb}</Blurb>
+                <br />
                 <div>
                     {this.state.projects.map((project, i) => {
                         return (

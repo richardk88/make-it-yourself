@@ -77,6 +77,7 @@ class UserForm extends Component {
                         <div>
                             <input name="blurb" type="text" placeholder="Brief Intro" onChange={this._changeEvent} />
                         </div>
+                        <br />
                             <input type='submit'/>
                     </form>
                 </Form>
