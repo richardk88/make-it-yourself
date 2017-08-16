@@ -12,8 +12,8 @@ const Center = styled.div`
 `
 
 const StepImage = styled.img`
-    width: 280px;
-    height: 280px;
+    width: 300px;
+    height: 300px;
 `
 
 class Step extends Component {

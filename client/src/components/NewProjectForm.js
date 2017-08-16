@@ -4,14 +4,14 @@ import styled from 'styled-components';
 import {Link, Redirect} from 'react-router-dom';
 
 const Form = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-margin: 20px 300px 0px 300px;
-background-color: white;
-padding: 20px;
-border: 1px solid rgba(0,0,0,.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 300px 0px 300px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid rgba(0,0,0,.2);
 `
 
 const style = {

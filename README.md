@@ -2,7 +2,8 @@
 
 Heroku Link: https://make-it-yourself.herokuapp.com/
 
-ERD: <a href="http://imgur.com/ScGxGWC"><img src="http://i.imgur.com/ScGxGWC.jpg" title="source: imgur.com" /></a>
+ERD: 
+<a href="http://imgur.com/ScGxGWC"><img src="http://i.imgur.com/ScGxGWC.jpg" title="source: imgur.com" /></a>
 
 ##Application Wireframe 
 
@@ -17,7 +18,9 @@ ERD: <a href="http://imgur.com/ScGxGWC"><img src="http://i.imgur.com/ScGxGWC.jpg
 
 ## App Overview
 
-Make It Yourself is an application where a user can create a project of their own that other users can checkout and create on their own. Users can create a user profile, projects that will add to their project dashboard, and steps that will add to the specific project. This application is intended to bring users together to share their ideas on cool hobbies and interests to make this world a more interesting place.  
+Make-It-Yourself is a "DIY" application where a user can go in and upload a project that he or she has created to share with the rest of the world. Users can start by creating a user dashboard, add new projects to that dashboard, and add steps that will be added to that specific project. 
+
+This application is intended to bring users together by creating a platform where people can share their ideas, unique hobbies, and interests to make this world a more interesting place.  
 
 User Stories:  https://trello.com/b/Jj25xtLf/wdi-project-3-miy
 
@@ -33,8 +36,10 @@ User Stories:  https://trello.com/b/Jj25xtLf/wdi-project-3-miy
 
 ## Technologies Used
 
+ * React
  * Heroku
  * Node.js
+ * Express
  * MongoDB
  * Mongoose
  * HTML5
