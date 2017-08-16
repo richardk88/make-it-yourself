@@ -3,6 +3,19 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+const Center = styled.div`
+    text-align: center;
+    margin: 30px 250px 90px 250px;
+    background-color: white;
+    padding: 40px;
+    border: 1px solid rgba(0,0,0,.2);
+`
+
+const StepImage = styled.img`
+    width: 280px;
+    height: 280px;
+`
+
 class Step extends Component {
     constructor(){
         super();
@@ -25,7 +38,7 @@ class Step extends Component {
 
     render() {
         return (
-            <div>
+            <Center>
                 <div>
                     <div>
                         <Link to={`/user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}`}>
@@ -34,11 +47,13 @@ class Step extends Component {
                         <h1>{this.state.steps.name}</h1>
                     </div>
                     <div>
-                        <img src={this.state.steps.image} alt="" />
+                        <StepImage src={this.state.steps.image} alt="" />
+                        <br />
+                        <br />
                         <p>{this.state.steps.description}</p>
                     </div>
                 </div>             
-            </div>
+            </Center>
         );
     }
 }
