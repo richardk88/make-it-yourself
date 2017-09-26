@@ -8,7 +8,7 @@ const Center = styled.div`
     background-size: cover;
     text-align: center;
     vertical-align: middle;
-    margin: 12% 8.3%;
+    margin: 10% 8.3%;
     padding: 120px;
 `
 

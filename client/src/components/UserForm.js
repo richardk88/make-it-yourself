@@ -58,7 +58,7 @@ class UserForm extends Component {
         } else {
             return (
                 <div>
-                        <h1 className='newAccount'>New Account</h1>
+                        <h1 className='title'>New Account</h1>
                     <Form className='boxShadow'>
                         <form onSubmit={this._addNewUser}>
                             <div>

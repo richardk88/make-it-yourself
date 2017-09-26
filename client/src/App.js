@@ -30,13 +30,12 @@ const Nav = styled.div`
   }
 `
 const Footer = styled.p`
-  position: fixed;
   bottom: 0px;
   width: 100vw;
   height: .5vw;
   text-align: center;
   margin-bottom: 0;
-  padding: 30px 3vw;
+  padding: 0 3vw 30px 3vw;
   border-top: 2px solid rgba(0,0,0,0);
     p{
       color: rgba(255, 255, 255, 0.73);
