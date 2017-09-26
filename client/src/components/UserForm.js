@@ -4,18 +4,20 @@ import styled from 'styled-components';
 import {Link, Redirect} from 'react-router-dom';
 
 const Form = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 300px 0px 300px;
-    background-color: white;
-    padding: 20px;
-    border: 1px solid rgba(0,0,0,.2);
+    background: url('https://i.imgur.com/cIT85NG.jpg') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    vertical-align: middle;
+    margin: 7% 8.3%;
+    padding: 90px 80px;
+    input {
+        font-size: 1.7rem;
+        padding: 2px 10vw 0 2px;
+        text-align: left;
+        border: 1px solid black;
+        margin: 2px;
+    }
 `
-const style = {
-    height: "280px",
-  }
 
 class UserForm extends Component {
     constructor(){
@@ -55,32 +57,33 @@ class UserForm extends Component {
             return <Redirect to={`/user/${this.state.userId}`} />
         } else {
             return (
-                <Form>
-                    <img src='http://i.imgur.com/bEt0Age.png' style={style}/>
-                    <h1>Create A New Life-Form</h1>
-                    <form onSubmit={this._addNewUser}>
-                        <div>
-                            <input name="userName" type="text" placeholder="User Name" onChange={this._changeEvent} required/>
-                        </div>
-                        <div>
-                            <input name="firstName" type="text"  placeholder="First Name" onChange={this._changeEvent} required/>
-                        </div>
-                        <div>       
-                            <input name="lastName" type="text" placeholder="Last Name" onChange={this._changeEvent} required/>
-                        </div>
-                        <div>
-                            <input name="email" type="text" placeholder="E-mail" onChange={this._changeEvent} required/>
-                        </div>
-                        <div>
-                            <input name="password" type="text" placeholder="Password" onChange={this._changeEvent} required/>
-                        </div>
-                        <div>
-                            <input name="blurb" type="text" placeholder="Brief Intro" onChange={this._changeEvent} />
-                        </div>
-                        <br />
-                            <input type='submit'/>
-                    </form>
-                </Form>
+                <div>
+                        <h1 className='newAccount'>New Account</h1>
+                    <Form className='boxShadow'>
+                        <form onSubmit={this._addNewUser}>
+                            <div>
+                                <input name="userName" type="text" placeholder="User Name" onChange={this._changeEvent} required/>
+                            </div>
+                            <div>
+                                <input name="firstName" type="text"  placeholder="First Name" onChange={this._changeEvent} required/>
+                            </div>
+                            <div>       
+                                <input name="lastName" type="text" placeholder="Last Name" onChange={this._changeEvent} required/>
+                            </div>
+                            <div>
+                                <input name="email" type="text" placeholder="E-mail" onChange={this._changeEvent} required/>
+                            </div>
+                            <div>
+                                <input name="password" type="text" placeholder="Password" onChange={this._changeEvent} required/>
+                            </div>
+                            <div>
+                                <input name="blurb" type="text" placeholder="Brief Intro" onChange={this._changeEvent} />
+                            </div>
+                            <br />
+                                <input type='submit' className='btnColor'/>
+                        </form>
+                    </Form>
+                </div>
             );    
         }
     }

@@ -33,7 +33,7 @@ class Home extends Component {
 
     render() {
         return (
-            <Center>
+            <Center className='boxShadow'>
                 <div>
                     <input type="text" placeholder="E-mail" className='inputBox'/>
                     <input type="text" placeholder="Password" className='inputBox'/>
