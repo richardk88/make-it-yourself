@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
-import {FaHome, FaSearch} from 'react-icons/lib/fa'
+import {FaHome} from 'react-icons/lib/fa'
 import Home from './components/Home';
 import Dashboard from './components/Dashboard';
 import Project from './components/Project';
@@ -13,45 +13,38 @@ import NewStepForm from './components/NewStepForm';
 // import {Navbar, NavItem, MenuItem, } from 'react-bootstrap';
 
 const Nav = styled.div`
-  background-color: rgba(182, 199, 191, 0.2);
+  background-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 45px 5vw;
+  padding: 25px;
   width: 100vw;
-  height: 15px;
+  height: 10px;
   border-bottom: 2px solid rgba(0,0,0,.0975);
   p{
-    font-size: 2.55rem;
-    font-family: 'Oleo Script', cursive;
-    margin: 0;
-    svg{
-      margin-bottom: 5px;
-    }
+    font-size: 2rem;
+    font-family: 'Work Sans', sans-serif;
+    color: white;
   }
 `
 
 const Footer = styled.p`
-background-color: rgba(0,0,0,.55);
-position: fixed;
-bottom: 0px;
-width: 100vw;
-height: .5vw;
-text-align: center;
-margin-bottom: 0;
-padding: 30px 3vw;
-border-top: 2px solid rgba(0,0,0,0);
-p{
-  color:rgba(255,255,255,1);
-  font-size: 1.7rem;
-  margin: 0;
-  svg{ 
-    margin-bottom: 5px; }
-}
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+  height: .5vw;
+  text-align: center;
+  margin-bottom: 0;
+  padding: 30px 3vw;
+  border-top: 2px solid rgba(0,0,0,0);
+    p{
+      color: white;
+      font-size: 1.7rem;
+    }
 `
 
 const style = {
-  height: "180px",
+  width: "50px",
 }
 
 class App extends Component {
@@ -60,9 +53,9 @@ class App extends Component {
       <Router>
         <div>
         <Nav>
+          <p><Link to="/"><img src='https://i.imgur.com/AzWK4V8.png' style={style}/></Link></p>
+          <p>MAKE it YOURSELF</p>
           <p><Link to="/"><FaHome /></Link></p>
-          <p><Link to="/"><img src='http://i.imgur.com/95hyBA4.png' style={style}/></Link></p>
-          <p><FaSearch /></p>
         </Nav>
             <Route exact path="/" component={Home} /> 
             <Route exact path="/signUp/" component={UserForm} />
