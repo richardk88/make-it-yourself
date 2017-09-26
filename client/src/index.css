@@ -45,12 +45,38 @@ body {
   padding: 15px 0;
 }
 
-/* DASHBOARD */
-
+/* USER EDIT FORM */
+.editForm {
+  background: url('https://i.imgur.com/cIT85NG.jpg') no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+  vertical-align: middle;
+  margin: 1% 8.3%;
+  padding: 90px 80px;
+}
+.editForm>form>div>input {
+  font-size: 1.7rem;
+  text-align: left;
+  border: 1px solid black;
+  margin: 2px;
+  width: 30vw;
+}
+.backBtn {
+  color: #E71E14;
+  font-family: 'Work Sans', sans-serif;  
+  font-size: 1.5rem;  
+}
 
 
 @media screen and (max-width: 400px){
   .title {
     font-size: 2rem;
+  }
+  .editForm {
+    padding: 3vh 0;
+    margin: 4vh 0;
+  }
+  .editForm>form>div>input {
+    width: 80vw;
   }
 }
