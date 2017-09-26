@@ -8,14 +8,14 @@ const Form = styled.div`
     background-size: cover;
     text-align: center;
     vertical-align: middle;
-    margin: 7% 8.3%;
+    margin: 6% 8.3%;
     padding: 90px 80px;
     input {
         font-size: 1.7rem;
-        padding: 2px 10vw 0 2px;
-        text-align: left;
+        text-align: center;
         border: 1px solid black;
         margin: 2px;
+        width: 30vw;
     }
 `
 
