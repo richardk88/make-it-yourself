@@ -3,23 +3,19 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-// const Center = styled.div`
-//     text-align: center;
-//     margin: auto;   
-// `
+
 const Center = styled.div`
     text-align: center;
-    margin: 30px 250px 90px 250px;
+    margin: 3vh 12vw;
     background-color: white;
     padding: 20px 30px 15px 30px;
     border: 1px solid rgba(0,0,0,.2);
 `
-
 const ProjectImage = styled.img`
-    width: 280px;
-    height: 280px;
+    width: 45vw;
+    height: 40vh;
+    border: 1px solid #E71E14;
 `
-
 class Project extends Component {
     constructor(){
         super();
@@ -48,25 +44,20 @@ class Project extends Component {
 
     render() {
         return (
-            <Center>
+            <Center className='boxShadow'>
                     <h1>{this.state.project.name}</h1>
-                    <Link to={`/user/${this.props.match.params.userId}/`}>
-                        <button>Go Back</button>
-                    </Link>
-                    {/* <button>Edit Project</button> */}
-                <br />
                 <br />
                 <ProjectImage src={this.state.project.image} alt=""/>
                 <br />
                 <br />
                 <div>
                     <div>
-                        <p>Materials: {this.state.materials}</p>
+                        <p className='materials'><b>MATERIALS :</b> {this.state.materials}</p>
                     </div>
                     <ul>
                         {this.state.steps.map((step, i) => {
                             return(
-                                <div key={i}>
+                                <div key={i} className='steps'>
                                     <Link to={`/user/${this.state.userId}/project/${this.state.project._id}/steps/${step._id}`}>
                                         {step.name}
                                     </Link>
@@ -77,9 +68,12 @@ class Project extends Component {
                     </ul>
                 </div>
                 <Link to={`/user/${this.state.userId}/project/${this.state.project._id}/newStep`}>
-                    <button>Add Step</button>
+                    <button className='btnColor'>Add Step</button>
                 </Link>
-                <button>DELETE PROJECT</button>
+                <button className='btnColor'>DELETE PROJECT</button>
+                <div>
+                    <Link to={`/user/${this.props.match.params.userId}/`} className='backBtn'> Go Back</Link>
+                </div>
             </Center>
         );
     }

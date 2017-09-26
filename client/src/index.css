@@ -32,6 +32,9 @@ body {
   font-family: 'Work Sans', sans-serif;  
   font-size: 2rem;  
 }
+ul {
+  padding-left:0
+}
 
 /* USER FORM */
 .title {
@@ -67,6 +70,16 @@ body {
   font-size: 1.5rem;  
 }
 
+/* PROJECT */
+.steps {
+  display: flex;
+  justify-content: center;
+}
+.steps>a {
+  color: #E71E14;
+}
+
+
 
 @media screen and (max-width: 400px){
   .title {
@@ -78,5 +91,14 @@ body {
   }
   .editForm>form>div>input {
     width: 80vw;
+  }
+  .gKSxCI {
+    height: 35vh;
+  }
+  .materials {
+    font-size: 1.2rem;
+  }
+  .steps {
+    font-size: 1.2rem;
   }
 }
