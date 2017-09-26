@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Center = styled.div`
-    background: url('https://i.imgur.com/cIT85NG.jpg') center center fixed;
-    background: cover;
+    background: url('https://i.imgur.com/cIT85NG.jpg') no-repeat center center fixed;
+    background-size: cover;
     text-align: center;
     vertical-align: middle;
-    margin: 12% 5%;
+    margin: 12% 8.3%;
     padding: 120px;
 `
 
@@ -35,20 +35,20 @@ class Home extends Component {
         return (
             <Center>
                 <div>
-                    <input type="text" placeholder="E-mail" />
-                    <input type="text" placeholder="Password" />
+                    <input type="text" placeholder="E-mail" className='inputBox'/>
+                    <input type="text" placeholder="Password" className='inputBox'/>
                 </div>
                 <br />
                 <div>
                     <Link to={`/signUp`}>
-                        <button>Create Account</button>
+                        <button className='btnColor'>Create Account</button>
                     </Link>
-                    <button>Login</button>
+                    <button className='btnColor'>Login</button>
                 </div>
                 <br />
                 {this.state.users.map((user, i) => (
                     <div key={i}>
-                        <Link to={`/user/${user._id}`}>
+                        <Link to={`/user/${user._id}`} className='userName'>
                             {user.userName}
                         </Link>
                     </div>

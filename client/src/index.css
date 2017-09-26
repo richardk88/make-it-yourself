@@ -13,6 +13,24 @@ body {
   font-size: 1.8rem;  
 }
 
+/* HOME */
 .sc-bdVaJa {
   box-shadow: 5px 5px 35px 7px rgba(0, 0, 0, 0.39);
+}
+
+/* USER FORM */
+.inputBox {
+  border: 1px solid black;
+  margin: 2px;
+}
+.btnColor {
+  background-color: black;
+  color: white;
+  padding: 5px 12px;
+  margin: 5px;
+}
+.userName {
+  color: #FF1E0E;
+  font-family: 'Work Sans', sans-serif;  
+  font-size: 2rem;  
 }
