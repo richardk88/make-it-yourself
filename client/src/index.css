@@ -1,5 +1,18 @@
 body {
   font-family: sans-serif;
-  background: linear-gradient(#FF1E0E,#FF0048);
+  background: linear-gradient(#FF1E0E,#FF0048) no-repeat center center fixed;
   height: 100vh;
+}
+
+/* NAVBAR */
+.sc-gqjmRU p {
+  margin: 0;
+}
+.it {
+  font-family: 'Cedarville Cursive', cursive;  
+  font-size: 1.8rem;  
+}
+
+.sc-bdVaJa {
+  box-shadow: 5px 5px 35px 7px rgba(0, 0, 0, 0.39);
 }

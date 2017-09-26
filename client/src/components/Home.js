@@ -4,16 +4,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Center = styled.div`
+    background: url('https://i.imgur.com/cIT85NG.jpg') center center fixed;
+    background: cover;
     text-align: center;
-    margin: 40px 300px 0px 300px;
-    background-color: white;
-    padding: 50px;
-    border: 1px solid rgba(0,0,0,.2);
+    vertical-align: middle;
+    margin: 12% 5%;
+    padding: 120px;
 `
-
-const style = {
-    height: "300px",
-  }
 
 class Home extends Component {
     constructor() {
@@ -37,7 +34,6 @@ class Home extends Component {
     render() {
         return (
             <Center>
-                <img src='http://i.imgur.com/bEt0Age.png' style={style}/>
                 <div>
                     <input type="text" placeholder="E-mail" />
                     <input type="text" placeholder="Password" />

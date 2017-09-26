@@ -10,24 +10,25 @@ import UserForm from './components/UserForm';
 import UserEditForm from './components/UserEditForm';
 import NewProjectForm from './components/NewProjectForm';
 import NewStepForm from './components/NewStepForm';
-// import {Navbar, NavItem, MenuItem, } from 'react-bootstrap';
 
 const Nav = styled.div`
   background-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px;
+  padding: 15px 40px;
   width: 100vw;
-  height: 10px;
   border-bottom: 2px solid rgba(0,0,0,.0975);
   p{
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-family: 'Work Sans', sans-serif;
+    color: white;
+    letter-spacing: 1.5px;
+  }
+  svg {
     color: white;
   }
 `
-
 const Footer = styled.p`
   position: fixed;
   bottom: 0px;
@@ -38,8 +39,8 @@ const Footer = styled.p`
   padding: 30px 3vw;
   border-top: 2px solid rgba(0,0,0,0);
     p{
-      color: white;
-      font-size: 1.7rem;
+      color: rgba(255, 255, 255, 0.73);
+      font-size: 1.3 rem;
     }
 `
 
@@ -54,8 +55,8 @@ class App extends Component {
         <div>
         <Nav>
           <p><Link to="/"><img src='https://i.imgur.com/AzWK4V8.png' style={style}/></Link></p>
-          <p>MAKE it YOURSELF</p>
-          <p><Link to="/"><FaHome /></Link></p>
+          <p>MAKE <span className='it'>it</span> YOURSELF</p>
+          <p><Link to="/"><FaHome size={20}/></Link></p>
         </Nav>
             <Route exact path="/" component={Home} /> 
             <Route exact path="/signUp/" component={UserForm} />
