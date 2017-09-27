@@ -4,14 +4,19 @@ import styled from 'styled-components';
 import { Link, Redirect } from 'react-router-dom';
 
 const Form = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 300px 0px 300px;
-    background-color: white;
-    padding: 20px;
-    border: 1px solid rgba(0,0,0,.2);
+    background: url('https://i.imgur.com/cIT85NG.jpg') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    vertical-align: middle;
+    margin: 6% 8.3%;
+    padding: 90px 80px;
+    input {
+        font-size: 1.7rem;
+        text-align: center;
+        border: 1px solid black;
+        margin: 2px;
+        width: 30vw;
+    }
 `
 const style = {
     height: "280px",
@@ -52,27 +57,28 @@ class NewStepForm extends Component {
             return <Redirect to={`/user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}`} />
         } else {
             return (
-                <Form>
-                    <img src='http://i.imgur.com/bEt0Age.png' style={style}/>
-                    <h1>Create A New Step</h1>
-                    <form onSubmit={this._addNewStep}>
-                        <div>
-                            <input name="name" type="text" placeholder="Name" onChange={this._changeEvent} required/>
-                        </div>
-                        <div>
-                            <input name="image" type="text"  placeholder="Image Link" onChange={this._changeEvent} required/>
-                        </div>
-                        <div>       
-                            <input name="description" type="text" placeholder="Description" onChange={this._changeEvent} required/>
-                        </div>
+                <div>
+                    <h1 className='title'>Create A New Step</h1>
+                    <Form className='boxShadow'>                    
+                        <form onSubmit={this._addNewStep}>
+                            <div>
+                                <input name="name" type="text" placeholder="Name" onChange={this._changeEvent} required/>
+                            </div>
+                            <div>
+                                <input name="image" type="text"  placeholder="Image Link" onChange={this._changeEvent} required/>
+                            </div>
+                            <div>       
+                                <input name="description" type="text" placeholder="Description" onChange={this._changeEvent} required/>
+                            </div>
+                            <br />
+                                <input type='submit' className='btnColor'/>
+                        </form>
                         <br />
-                            <input type='submit'/>
-                    </form>
-                    <br />
-                    <Link to={`/user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}`}>
-                        Go Back
-                    </Link>
-                </Form>
+                        <Link to={`/user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}`} className='backBtn'>
+                            Go Back
+                        </Link>
+                    </Form>
+                </div>
             );    
         }
     }

@@ -92,13 +92,17 @@ ul {
   .editForm>form>div>input {
     width: 80vw;
   }
-  .gKSxCI {
-    height: 35vh;
+  img.gKSxCI {
+    width: 60vw;
+    height: 30vh;
   }
   .materials {
     font-size: 1.2rem;
   }
   .steps {
     font-size: 1.2rem;
+  }
+  .hmJqnC>form>div>input {
+    width: 45vw;
   }
 }
