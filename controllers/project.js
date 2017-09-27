@@ -35,6 +35,7 @@ router.post('/newProject', (req, res) => {
     }).catch(err => console.log(err));
   })
 
+//delete route
 router.delete(`/project/:projectId`, (req, res) => {
     User.findById(req.params.userId).then( user => {
         const Index = user.projects.findIndex((project) => {

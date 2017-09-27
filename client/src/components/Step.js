@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 const Center = styled.div`
-    text-align: center;
-    margin: 30px 250px 90px 250px;
-    background-color: white;
-    padding: 40px;
-    border: 1px solid rgba(0,0,0,.2);
+text-align: center;
+margin: 3vh 12vw;
+background-color: white;
+padding: 20px 30px 15px 30px;
+border: 1px solid rgba(0,0,0,.2);
 `
 
 const StepImage = styled.img`
@@ -20,6 +20,7 @@ class Step extends Component {
     constructor(){
         super();
         this.state = {
+            redirect: false,
             user: "",
             steps: []
         }
@@ -36,14 +37,22 @@ class Step extends Component {
         })
     }
 
+    _deleteStep = () => {
+        const userId = this.props.match.params.userId;
+        const projectId = this.props.match.params.projectId;
+        const stepId = this.props.match.params.stepId;
+        axios.delete(`/api/user/${userId}/project/${projectId}/steps/${stepId}`).then(res => {
+            this.setState({ redirect: true })
+        })
+    }
+
     render() {
-        return (
-            <Center>
-                <div>
+        if (this.state.redirect){
+            return <Redirect to={`/user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}`} />
+        } else {
+            return (
+                <Center className='boxShadow'>
                     <div>
-                        <Link to={`/user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}`}>
-                            <button>Go Back</button>
-                        </Link>
                         <h1>{this.state.steps.name}</h1>
                     </div>
                     <div>
@@ -52,10 +61,15 @@ class Step extends Component {
                         <br />
                         <p>{this.state.steps.description}</p>
                     </div>
-                    <button>delete</button> 
-                </div>             
-            </Center>
-        );
+                    <button onClick={this._deleteStep} className='btnColor'>delete</button> 
+                    <div>
+                        <Link to={`/user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}`} className='backBtn'>
+                            Go Back
+                        </Link>
+                    </div>          
+                </Center>
+            );
+        }
     }
 }
 
