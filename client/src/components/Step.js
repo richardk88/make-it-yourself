@@ -4,16 +4,17 @@ import styled from 'styled-components';
 import { Link, Redirect } from 'react-router-dom';
 
 const Center = styled.div`
-text-align: center;
-margin: 3vh 12vw;
-background-color: white;
-padding: 20px 30px 15px 30px;
-border: 1px solid rgba(0,0,0,.2);
+    text-align: center;
+    margin: 3vh 12vw;
+    background-color: white;
+    padding: 20px 30px 15px 30px;
+    border: 1px solid rgba(0,0,0,.2);
 `
 
 const StepImage = styled.img`
-    width: 300px;
-    height: 300px;
+    width: 45vw;
+    height: 40vh;
+    border: 1px solid #E71E14;
 `
 
 class Step extends Component {
