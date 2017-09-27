@@ -52,6 +52,7 @@ class Step extends Component {
                         <br />
                         <p>{this.state.steps.description}</p>
                     </div>
+                    <button>delete</button> 
                 </div>             
             </Center>
         );

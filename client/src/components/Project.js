@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
 const Center = styled.div`
@@ -20,6 +20,7 @@ class Project extends Component {
     constructor(){
         super();
         this.state = {
+            redirect: false,
             user: "",
             project: [],
             steps: [],
@@ -42,40 +43,52 @@ class Project extends Component {
         })
     }
 
+    _deleteProject = () => {
+        const userId = this.props.match.params.userId;
+        const projectId = this.props.match.params.projectId;
+        axios.delete(`/api/user/${userId}/project/${projectId}`).then(res => {
+            this.setState({ redirect: true })
+        })
+    }
+
     render() {
-        return (
-            <Center className='boxShadow'>
-                    <h1>{this.state.project.name}</h1>
-                <br />
-                <ProjectImage src={this.state.project.image} alt=""/>
-                <br />
-                <br />
-                <div>
+        if (this.state.redirect){
+            return <Redirect to={`/user/${this.state.userId}`} />
+        } else {
+            return (
+                <Center className='boxShadow'>
+                        <h1>{this.state.project.name}</h1>
+                    <br />
+                    <ProjectImage src={this.state.project.image} alt=""/>
+                    <br />
+                    <br />
                     <div>
-                        <p className='materials'><b>MATERIALS :</b> {this.state.materials}</p>
+                        <div>
+                            <p className='materials'><b>MATERIALS :</b> {this.state.materials}</p>
+                        </div>
+                        <ul>
+                            {this.state.steps.map((step, i) => {
+                                return(
+                                    <div key={i} className='steps'>
+                                        <Link to={`/user/${this.state.userId}/project/${this.state.project._id}/steps/${step._id}`}>
+                                            {step.name}
+                                        </Link>
+                                    </div>
+                                )
+                            })}
+                        </ul>
                     </div>
-                    <ul>
-                        {this.state.steps.map((step, i) => {
-                            return(
-                                <div key={i} className='steps'>
-                                    <Link to={`/user/${this.state.userId}/project/${this.state.project._id}/steps/${step._id}`}>
-                                        {step.name}
-                                    </Link>
-                                    {/* <button>Remove</button>  */}
-                                </div>
-                            )
-                        })}
-                    </ul>
-                </div>
-                <Link to={`/user/${this.state.userId}/project/${this.state.project._id}/newStep`}>
-                    <button className='btnColor'>Add Step</button>
-                </Link>
-                <button className='btnColor'>DELETE PROJECT</button>
-                <div>
-                    <Link to={`/user/${this.props.match.params.userId}/`} className='backBtn'> Go Back</Link>
-                </div>
-            </Center>
-        );
+                    <Link to={`/user/${this.state.userId}/project/${this.state.project._id}/newStep`}>
+                        <button className='btnColor'>Add Step</button>
+                    </Link>
+
+                    <button onClick={this._deleteProject} className='btnColor'>DELETE PROJECT</button>
+                    <div>
+                        <Link to={`/user/${this.props.match.params.userId}/`} className='backBtn'> Go Back</Link>
+                    </div>
+                </Center>
+            );
+        }
     }
 }
 

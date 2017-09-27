@@ -6,6 +6,7 @@ const router = express.Router({
 });
 const mongoose = require('mongoose');
 
+
 //show route
 router.get('/project/:projectId', (req, res) => {
     User.findById(req.params.userId).then((user) => {
@@ -33,6 +34,17 @@ router.post('/newProject', (req, res) => {
       res.json(project);
     }).catch(err => console.log(err));
   })
+
+router.delete(`/project/:projectId`, (req, res) => {
+    User.findById(req.params.userId).then( user => {
+        const Index = user.projects.findIndex((project) => {
+            return project.id === req.params.projectId
+    })
+    user.projects.splice(Index, 1);
+    user.save()
+    res.send(200);
+}).catch(err => console.log(err))
+})
 
 
 
