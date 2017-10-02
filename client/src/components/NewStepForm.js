@@ -8,7 +8,7 @@ const Form = styled.div`
     background-size: cover;
     text-align: center;
     vertical-align: middle;
-    margin: 6% 8.3%;
+    margin: 6% 10.3%;
     padding: 90px 80px;
     input {
         font-size: 1.7rem;

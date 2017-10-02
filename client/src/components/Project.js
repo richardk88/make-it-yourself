@@ -78,6 +78,8 @@ class Project extends Component {
                             })}
                         </ul>
                     </div>
+                    <br />
+                    <br />
                     <Link to={`/user/${this.state.userId}/project/${this.state.project._id}/newStep`}>
                         <button className='btnColor'>Add Step</button>
                     </Link>
