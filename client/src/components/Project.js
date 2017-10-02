@@ -12,7 +12,7 @@ const Center = styled.div`
     border: 1px solid rgba(0,0,0,.2);
 `
 const ProjectImage = styled.img`
-    width: 45vw;
+    width: 40vw;
     height: 40vh;
     border: 1px solid #E71E14;
 `
