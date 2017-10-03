@@ -57,7 +57,7 @@ class Project extends Component {
         } else {
             return (
                 <Center className='boxShadow'>
-                        <h1>{this.state.project.name}</h1>
+                        <h1><b>{this.state.project.name}</b></h1>
                     <br />
                     <ProjectImage src={this.state.project.image} alt=""/>
                     <br />
