@@ -54,7 +54,7 @@ class Step extends Component {
             return (
                 <Center className='boxShadow'>
                     <div>
-                        <h1>{this.state.steps.name}</h1>
+                        <h1><b>{this.state.steps.name}</b></h1>
                     </div>
                     <div>
                         <StepImage src={this.state.steps.image} alt="" />
