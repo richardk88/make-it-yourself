@@ -8,8 +8,8 @@ const Center = styled.div`
     background-size: cover;
     text-align: center;
     vertical-align: middle;
-    margin: 10% 8.3%;
-    padding: 90px;
+    margin: 9% 8.3%;
+    padding: 100px 100px;
 `
 
 class Home extends Component {
