@@ -122,4 +122,7 @@ ul {
   p {
     font-size: 1rem;
   }
+  p.sc-htpNat {
+    margin: 0 0;
+  }
 }
