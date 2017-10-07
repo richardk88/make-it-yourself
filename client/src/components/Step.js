@@ -63,7 +63,6 @@ class Step extends Component {
                         <p>{this.state.steps.description}</p>
                     </div>
                     <br />
-                    <br />
                     <button onClick={this._deleteStep} className='btnColor'>delete</button> 
                     <div>
                         <Link to={`/user/${this.props.match.params.userId}/project/${this.props.match.params.projectId}`} className='backBtn'>
