@@ -12,6 +12,7 @@ const Center = styled.div`
 const Blurb = styled.p`
     text-align: center;
     margin: 0 19vw;
+    text-align: left;
 `
 const ProjectContainer = styled.div`
     display: flex;
