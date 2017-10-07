@@ -66,7 +66,7 @@ class Project extends Component {
                         <div>
                             <p className='materials'><b>MATERIALS :</b> {this.state.materials}</p>
                         </div>
-                        <ul>
+                        <div className='alignLeft'>
                             {this.state.steps.map((step, i) => {
                                 return(
                                     <div key={i} className='steps'>
@@ -76,7 +76,7 @@ class Project extends Component {
                                     </div>
                                 )
                             })}
-                        </ul>
+                        </div>
                     </div>
                     <br />
                     <Link to={`/user/${this.state.userId}/project/${this.state.project._id}/newStep`}>

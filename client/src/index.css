@@ -71,9 +71,12 @@ ul {
 }
 
 /* PROJECT */
+.alignLeft {
+  text-align: center;
+  padding: 0 17vw;
+}
 .steps {
-  display: flex;
-  justify-content: center;
+  text-align: left;
 }
 .steps>a {
   color: #E71E14;
