@@ -115,4 +115,8 @@ ul {
   .alignLeft {
     padding: 0 0;
   }
+  img.sc-htoDjs {
+    width: 60vw;
+    height: 30vh;
+  }
 }
