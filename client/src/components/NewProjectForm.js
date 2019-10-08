@@ -65,7 +65,7 @@ class NewProjectForm extends Component {
                                 <input name="name" type="text" placeholder="Name" onChange={this._changeEvent} required/>
                             </div>
                             <div>
-                                <input name="image" type="text"  placeholder="Image Link" onChange={this._changeEvent} required/>
+                                <input name="image" type="text"  placeholder="Image Link" onChange={this._changeEvent} />
                             </div>
                             <div>       
                                 <input name="materials" type="text" placeholder="List of Materials" onChange={this._changeEvent} required/>
