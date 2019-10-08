@@ -28,16 +28,13 @@ const ProjectImage = styled.img`
 `
 
 class Dashboard extends Component {
-    constructor() {
-        super();
-        this.state = {
+state = {
             user: [],
             blurb: "",
             userId: "",
             redirect: false,
             projects: []
         }
-    }
     componentWillMount() {
         const id = this.props.match.params.userId;
         axios.get(`/api/user/${id}`).then((res) => {
@@ -56,9 +53,7 @@ class Dashboard extends Component {
     }
 
     render() {
-        if(this.state.redirect){
-            return <Redirect to={'/'}/>;
-        } else {
+        (this.state.redirect ? return <Redirect to={'/'}/>:
         return (
             <div>
                 <h1 className='title'>{this.state.user.firstName}'s Dashboard</h1>
